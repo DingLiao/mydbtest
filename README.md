@@ -1,0 +1,2 @@
+# mydbtest
+database connection test
