@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class DBTest {
+	public final String JDBC_URL = "jdbc:mysql://localhost:3306/world";
+	public final String USERNAME = "root";
+	public final String PASSWORD = "liaodings";
+	
 	public static void main(String[] arg){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -16,7 +20,7 @@ public class DBTest {
 		}
 		
 		try {
-			Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/world","root","liaodings");
+			Connection connect = DriverManager.getConnection(JDBC_URL,USERNAME,PASSWORD);
 			System.out.println("Success connect Mysql server!");
 		    Statement stmt = connect.createStatement();
 		    ResultSet rs = stmt.executeQuery("select * from city");		                                                             
